@@ -1,12 +1,29 @@
+import React from 'react';
 import KalendaroLogoSVG from "../../../assets/kalendaro_logo1.svg";
 
-export const Logo = () => {
+interface LogoProps {
+  imgWidth?: string;
+  imgHeight?: string;
+  fontSize?: string;
+}
+
+export const Logo: React.FC<LogoProps> = ({
+  imgWidth = "40px",
+  imgHeight = "40px",
+  fontSize = "2xl",
+}) => {
   return (
-    <a className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
+    <a
+      href="/"
+      className={`flex items-center font-semibold text-gray-900 dark:text-white text-${fontSize}`}
+      aria-label="Kalendaro Home"
+      title="Kalendaro Home"
+    >
       <img
         src={KalendaroLogoSVG}
-        className="w-10 h-10 mr-2"
-        alt="website logo"
+        style={{ width: imgWidth, height: imgHeight }}
+        className="mr-2"
+        alt="Kalendaro Logo"
       />
       Kalendaro
     </a>

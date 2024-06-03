@@ -5,8 +5,14 @@ import {
   TrashIcon,
   UserIcon,
 } from "@heroicons/react/16/solid";
+import { useAuth } from "../../../../../drivers/services/useAuth";
 
 const Avatar = () => {
+  const { logout } = useAuth();
+
+  const handleClick = () => {
+    logout();
+  };
 
   return (
     <div className="order-1">
@@ -37,7 +43,7 @@ const Avatar = () => {
           <div className="my-1 h-px bg-white/5" />
           <MenuItem>
             <button className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
-              <Square2StackIcon className="size-4"/>
+              <Square2StackIcon className="size-4" />
               Settings
               <kbd className="ml-auto hidden font-sans text-xs text-white/50 group-data-[focus]:inline">
                 ⌘D
@@ -56,7 +62,10 @@ const Avatar = () => {
           </MenuItem>
           <div className="my-1 h-px bg-white/5" />
           <MenuItem>
-            <button className="group flex w-full items-center gap-2 py-1.5 rounded-lg px-3 data-[focus]:bg-white/10">
+            <button
+              className="group flex w-full items-center gap-2 py-1.5 rounded-lg px-3 data-[focus]:bg-white/10"
+              onClick={handleClick}
+            >
               <TrashIcon className="size-4" />
               Logout
               <kbd className="ml-auto hidden font-sans text-xs text-white/50 group-data-[focus]:inline">

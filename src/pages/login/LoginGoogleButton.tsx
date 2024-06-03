@@ -19,11 +19,10 @@ export const LoginGoogleButton = () => {
   }, []);
 
   const handleLogin = () => {
-    const w = window.open("http://localhost:4000/auth/google", "_blank","height=550,width=450,scrollbars=no");
+    const w = window.open("http://localhost:4000/auth/google", "_self");
     if (w) {
-      w.focus(); // okay now
+      w.focus();
     }
-    //window.open('http://localhost:4000/auth/google', '_self');
   };
 
   const handleLogout = () => {

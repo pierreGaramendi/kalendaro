@@ -3,21 +3,37 @@ import { Sidebar } from "../usecases/components/holy-grail/sidebar/Sidebar";
 import App from "../App";
 import { ScheduledEvents } from "../pages/scheduled/Scheduled";
 import { Login } from "../pages/login/Login";
+import ProtectedRoute from "./Protectedroute";
+import { Example } from "../pages/example/Example";
+import { SideNavs } from "../usecases/components/custom/SideNav/SideNav";
 
 export const AppRoutes = () => {
   return createBrowserRouter([
     {
       path: "/",
       element: (
-        <>
+        <ProtectedRoute>
           <Sidebar />
+          {/* <SideNavs></SideNavs> */}
           <App />
-        </>
+        </ProtectedRoute>
       ),
       children: [
         {
           path: "events",
-          element: <ScheduledEvents />,
+          element: (
+            <ProtectedRoute>
+              <ScheduledEvents />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "example",
+          element: (
+            <ProtectedRoute>
+              <Example />
+            </ProtectedRoute>
+          ),
         },
       ],
     },

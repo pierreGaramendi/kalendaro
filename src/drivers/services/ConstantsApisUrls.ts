@@ -1,0 +1,1 @@
+export const URL_MY_EVENTS = "https://wo7ij0hpaf.execute-api.sa-east-1.amazonaws.com/1deploy/events"
