@@ -39,9 +39,7 @@ export const Example = () => {
         </div> */}
 
         <div className="m-4 flex flex-row">
-
           <KButton
-            
             variant="normal"
             className="flex flex-row justify-center items-center"
           >

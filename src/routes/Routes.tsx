@@ -5,7 +5,6 @@ import { ScheduledEvents } from "../pages/scheduled/Scheduled";
 import { Login } from "../pages/login/Login";
 import ProtectedRoute from "./Protectedroute";
 import { Example } from "../pages/example/Example";
-import { SideNavs } from "../usecases/components/custom/SideNav/SideNav";
 
 export const AppRoutes = () => {
   return createBrowserRouter([
@@ -14,7 +13,6 @@ export const AppRoutes = () => {
       element: (
         <ProtectedRoute>
           <Sidebar />
-          {/* <SideNavs></SideNavs> */}
           <App />
         </ProtectedRoute>
       ),
