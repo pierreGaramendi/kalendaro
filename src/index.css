@@ -1,9 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('./css/themes.css');
 
-html, body {
-  font-family: 'Inter', -apple-system, sans-serif;
+html,
+body {
+  font-family: "Inter", -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -56,40 +58,9 @@ header {
 }
 
 
-:root {
-  /* Light Mode */
-  --color-primary: #3A5BBC;
-  --color-primary-light: #6A7FE8;
-  --color-primary-dark: #2F4793;
-
-  --color-success: #28A745;
-  --color-error: #DC3545;
-  --color-warning: #FFC107;
-  --color-info: #17A2B8;
-
-  --color-bg-primary: #FFFFFF;
-  --color-bg-secondary: #F8F9FA;
-  --color-text-primary: #212529;
-  --color-text-secondary: #6C757D;
-  --color-text-disabled: #ADB5BD;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Dark Mode */
-    --color-primary: #3A5BBC;
-    --color-primary-light: #4D6DD7;
-    --color-primary-dark: #2A3E8F;
-
-    --color-success: #28A745;
-    --color-error: #DC3545;
-    --color-warning: #FFC107;
-    --color-info: #17A2B8;
-
-    --color-bg-primary: #121212;
-    --color-bg-secondary: #1E1E1E;
-    --color-text-primary: #E1E1E1;
-    --color-text-secondary: #B3B3B3;
-    --color-text-disabled: #6C757D;
-  }
+input {
+  box-sizing: border-box;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
 }

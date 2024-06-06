@@ -1,7 +1,7 @@
 import { useCounter } from "../../usecases/components/custome-hook/useCounter";
 import { Counter1 } from "../../usecases/components/custome-hook/Counter";
 import DataFetcher from "../../usecases/components/data-fetcher/DataFethcer";
-import { KButton } from "../../usecases/components/custom/Button/Button";
+import { KButton } from "../../usecases/components/custom/Button/KButton";
 import { CalendarIcon } from "@heroicons/react/16/solid";
 
 export const Example = () => {

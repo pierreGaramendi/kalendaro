@@ -1,8 +1,8 @@
 import { Item } from "./components/Item";
-import { useAxios } from "../../drivers/services/useAxios";
-import { URL_MY_EVENTS } from "../../drivers/services/ConstantsApisUrls";
+import { URL_MY_EVENTS } from "../../drivers/services/constants/ConstantsApisUrls";
 import { Filters } from "./components/Filters";
 import { Title } from "./components/Title";
+import { useAxios } from "../../drivers/services/http/useAxios";
 
 export const ScheduledEvents = () => {
   const { data, loading, error } = useAxios(URL_MY_EVENTS);

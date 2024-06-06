@@ -4,7 +4,7 @@ import { SignupQuestion } from "./SignupQuestion";
 import { LoginGoogleButton } from "./LoginGoogleButton";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../drivers/services/useAuth";
+import { useAuth } from "../../drivers/services/auth/useAuth";
 
 const Login = () => {
   const [username, setUsername] = useState("");

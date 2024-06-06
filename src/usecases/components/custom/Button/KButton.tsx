@@ -1,4 +1,3 @@
-// Button.tsx
 import React from 'react';
 import styled, { css } from 'styled-components';
 
@@ -6,15 +5,16 @@ type ButtonVariant = 'normal' | 'disabled' | 'clear' | 'outline' | 'solid';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
+  fullWidth?: boolean;
 }
 
 const buttonVariants = {
   normal: css`
-    background: #007bff;
+    background: var(--color-primary);
     color: white;
     border: none;
     &:hover {
-      background: #0056b3;
+      background: var(--color-primary-light);
     }
   `,
   disabled: css`
@@ -49,21 +49,24 @@ const buttonVariants = {
   `,
 };
 
-const StyledButton = styled.button<{ variant: ButtonVariant }>`
-  padding: 10px 20px;
+const StyledButton = styled.button<{ variant: ButtonVariant; fullWidth: boolean }>`
+  padding: 9px 20px;
   font-size: 16px;
   cursor: pointer;
-  border-radius: 4px;
-  transition: transform 0.1s ease-in-out; /* Añadido para la transición */
-
+  border-radius: 0.5rem;
+  transition: transform 0.1s ease-in-out;
+  width: ${({ fullWidth }) => (fullWidth ? '100%' : 'auto')};
   ${({ variant }) => buttonVariants[variant] || buttonVariants.normal}
-
   &:not([disabled]):active {
-    transform: scale(0.95); /* Efecto de cambio de tamaño al hacer clic */
+    transform: scale(0.95);
   }
 `;
 
-export const KButton: React.FC<ButtonProps> = ({ variant = 'normal', ...props }) => {
-  return <StyledButton variant={variant} {...props} />;
+StyledButton.defaultProps = {
+  variant: 'normal',
+  fullWidth: false,
 };
 
+export const KButton: React.FC<ButtonProps> = ({ variant = 'normal', fullWidth = false, ...props }) => {
+  return <StyledButton variant={variant} fullWidth={fullWidth} {...props} />;
+};

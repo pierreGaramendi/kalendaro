@@ -5,6 +5,7 @@ import { ScheduledEvents } from "../pages/scheduled/Scheduled";
 import { Login } from "../pages/login/Login";
 import ProtectedRoute from "./Protectedroute";
 import { Example } from "../pages/example/Example";
+import { Signup } from "../pages/signup/Signup";
 
 export const AppRoutes = () => {
   return createBrowserRouter([
@@ -38,6 +39,10 @@ export const AppRoutes = () => {
     {
       path: "/login",
       element: <Login />,
+    },
+    {
+      path: "/signup",
+      element: <Signup />,
     },
   ]);
 };

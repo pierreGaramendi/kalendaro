@@ -1,28 +1,35 @@
-import { Logo } from "../../logo/Logo";
-import { CalendarIcon, CalendarDaysIcon } from "@heroicons/react/16/solid";
-import { SidebarItemX } from "./SidebarItem";
+import React from "react";
+import { NavLink } from "react-router-dom";
+import styled from "styled-components";
 
-export const Sidebar = () => {
+const SidebarContainer = styled.div`
+  width: 250px;
+  height: 100vh;
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+`;
+
+const SidebarLink = styled(NavLink)`
+  padding: 20px;
+  color: white;
+  text-decoration: none;
+  &.active {
+    background-color: var(--color-primary);
+  }
+  &:hover {
+    background-color: var(--color-primary);
+  }
+`;
+
+export const Sidebar: React.FC = () => {
   return (
-    <nav className="text-white sidebar-left bg-white dark:bg-zinc-900 border-r dark:border-zinc-600 p-6">
-      <div className="flex justify-left items-center p-2 mb-6">
-        <Logo imgWidth="30px" imgHeight="30px" fontSize="xl" />
-      </div>
-
-      <ul>
-        <li className="pb-2">
-          <SidebarItemX path="events">
-            <CalendarIcon className="size-6 mr-2" />
-            Eventossss
-          </SidebarItemX>
-        </li>
-        <li className="pb-2">
-          <SidebarItemX path="example">
-            <CalendarDaysIcon className="size-6 mr-2" />
-            Ejemplos
-          </SidebarItemX>
-        </li>
-      </ul>
-    </nav>
+    <SidebarContainer>
+      <SidebarLink to="/" end>
+        Home
+      </SidebarLink>
+      <SidebarLink to="/events">Eventos</SidebarLink>
+      <SidebarLink to="/example">Ejemplos</SidebarLink>
+    </SidebarContainer>
   );
 };

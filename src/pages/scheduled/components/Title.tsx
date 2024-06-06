@@ -1,5 +1,5 @@
 import { PlusCircleIcon } from "@heroicons/react/16/solid";
-import { KButton } from "../../../usecases/components/custom/Button/Button";
+import { KButton } from "../../../usecases/components/custom/Button/KButton";
 
 export const Title = () => {
   return (

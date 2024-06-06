@@ -5,7 +5,7 @@ import {
   TrashIcon,
   UserIcon,
 } from "@heroicons/react/16/solid";
-import { useAuth } from "../../../../../drivers/services/useAuth";
+import { useAuth } from "../../../../../drivers/services/auth/useAuth";
 
 const Avatar = () => {
   const { logout } = useAuth();
