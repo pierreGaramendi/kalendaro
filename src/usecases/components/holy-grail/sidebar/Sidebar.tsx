@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { Logo } from "../../logo/Logo";
 
 const SidebarContainer = styled.div`
   width: 250px;
@@ -25,6 +26,9 @@ const SidebarLink = styled(NavLink)`
 export const Sidebar: React.FC = () => {
   return (
     <SidebarContainer>
+      <div style={{ padding: 20 }}>
+        <Logo />
+      </div>
       <SidebarLink to="/" end>
         Home
       </SidebarLink>
